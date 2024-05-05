@@ -1,13 +1,111 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #083d77;
+  position: relative;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+}
+
+.app-bg {
+  background: url("../public/clouds.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  min-height: 100vh;
+}
+
+.app-inner {
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 4rem;
+  margin: 3rem 0.5rem;
+}
+
+h2 {
+  padding: 1.5rem 0.5rem 3rem 1.5rem;
+}
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  background-color: #18b4e7;
+  padding: 1.6rem 2.2rem;
+  border: none;
+  width: 32rem;
+}
+
+input:focus {
+  outline: 2px solid #ffcf56;
+}
+
+.weather {
+  list-style: none;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.day {
+  padding: 1.6rem 0 2rem;
+  width: 100%;
+  background-color: #a1ddf1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.day span {
+  font-size: 5.2rem;
+}
+.day.important {
+  outline: 2px solid #222;
+}
+
+.loader {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .weather {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .app {
+    height: 100vh;
+  }
+  .weather {
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+  }
 }
